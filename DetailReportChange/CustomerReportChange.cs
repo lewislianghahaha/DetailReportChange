@@ -24,17 +24,15 @@ namespace DetailReportChange
 
             //对初步的查询结果进行处理,然后写回基类默认的存放查询结果的临时表
             var strSql=$@"
-                            SELECT X.*
-                            INTO {tableName}
-                            FROM(
                              SELECT T1.*,C.FDATAVALUE FDI,E.FDATAVALUE FCountry
+                             INTO {tableName}
                              FROM {strDt} T1 /*后台‘应收款明细表’临时表*/
                              INNER JOIN T_BD_CUSTOMER a ON T1.FCONTACTUNITNUMBER=a.FNUMBER
                              LEFT JOIN T_BAS_ASSISTANTDATAENTRY B ON A.FPROVINCIAL=B.FENTRYID
                              LEFT JOIN dbo.T_BAS_ASSISTANTDATAENTRY_L C ON B.FENTRYID=C.FENTRYID AND C.FLOCALEID=2052
 
                              LEFT JOIN T_BAS_ASSISTANTDATAENTRY D ON A.F_YTC_ASSISTANT3=D.FENTRYID
-                             LEFT JOIN dbo.T_BAS_ASSISTANTDATAENTRY_L E ON D.FENTRYID=E.FENTRYID AND E.FLOCALEID=2052)X               
+                             LEFT JOIN dbo.T_BAS_ASSISTANTDATAENTRY_L E ON D.FENTRYID=E.FENTRYID AND E.FLOCALEID=2052         
                          ";
             DBUtils.Execute(Context, strSql);
         }
