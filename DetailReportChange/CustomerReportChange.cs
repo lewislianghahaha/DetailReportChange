@@ -1,4 +1,5 @@
-﻿using Kingdee.BOS.App;
+﻿using Kingdee.BOS;
+using Kingdee.BOS.App;
 using Kingdee.BOS.App.Data;
 using Kingdee.BOS.Contracts;
 using Kingdee.BOS.Core.Report;
@@ -39,10 +40,10 @@ namespace DetailReportChange
 
         //public override ReportHeader GetReportHeaders(IRptParams filter)
         //{
-        //      var reportHeader = base.GetReportHeaders(filter);
-        //      reportHeader.AddChild("FDI", new LocaleValue("地区", this.Context.LogLocale.LCID));
-        //      reportHeader.AddChild("FCountry", new LocaleValue("省份",this.Context.LogLocale.LCID));
-        //      return reportHeader;
+        //    var reportHeader = base.GetReportHeaders(filter);
+        //    reportHeader.AddChild("FDI", new LocaleValue("地区", this.Context.LogLocale.LCID));
+        //    reportHeader.AddChild("FCountry", new LocaleValue("省份", this.Context.LogLocale.LCID));
+        //    return reportHeader;
         //}
 
         /// <summary>
